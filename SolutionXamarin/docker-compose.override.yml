@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  sale.backend:
+    ports:
+      - "80"
+  sales.api:
+    ports:
+      - "80"
+networks:
+  default:
+    external:
+      name: nat
+

@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  sale.backend:
+    image: ${DOCKER_REGISTRY}salebackend
+    build:
+      context: .\Sale.Backend
+      dockerfile: Dockerfile
+
+  sales.api:
+    image: ${DOCKER_REGISTRY}salesapi
+    build:
+      context: .\Sales.API
+      dockerfile: Dockerfile
+
