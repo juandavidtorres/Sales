@@ -4,7 +4,13 @@ using System.Text;
 
 namespace Sales.ViewModels
 {
-    class MainViewModel
+   
+    public class MainViewModel
     {
+        public ProductsViewModel Products { get; set; }
+        public MainViewModel()
+        {
+            this.Products = new ProductsViewModel();
+        }
     }
 }
