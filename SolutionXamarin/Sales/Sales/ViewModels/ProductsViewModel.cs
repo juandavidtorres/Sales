@@ -41,8 +41,19 @@ namespace Sales.ViewModels{
             try
             {
                 this.IsRefreshing = true;
-                //string url = Application.Current.Resources["UrlApi"].ToString();
-                var reponse = await apiService.GetList<Product>("https://apisalesxamarin.azurewebsites.net", "/api", "/products");
+
+                var IsSuccess = await this.apiService.CheckConnection();
+
+                if (!IsSuccess.IsSuccess)
+                {
+                    this.IsRefreshing = false;
+                    await Application.Current.MainPage.DisplayAlert("Error", IsSuccess.Message, "Accept");
+                    return;
+                }
+
+
+                string url = Application.Current.Resources["UrlApi"].ToString();
+                var reponse = await apiService.GetList<Product>(url, "/api", "/products");
                 if (!reponse.IsSuccess)
                 {                    
                     await Application.Current.MainPage.DisplayAlert("Error", reponse.Message, "Accept");                    
