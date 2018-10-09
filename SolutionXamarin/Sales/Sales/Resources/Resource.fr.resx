@@ -118,18 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>Erreur</value>
   </data>
   <data name="Accept" xml:space="preserve">
-    <value>Accept</value>
+    <value>Accepter</value>
   </data>
   <data name="TurnOnInternet" xml:space="preserve">
-    <value>Please turn on your internet settings.</value>
+    <value>Veuillez activer vos paramètres internet.</value>
   </data>
   <data name="NoInternet" xml:space="preserve">
-    <value>No internet connection</value>
+    <value>Pas de connexion internet</value>
   </data>
   <data name="Products" xml:space="preserve">
-    <value>Title</value>
+    <value>Titre</value>
   </data>
 </root>

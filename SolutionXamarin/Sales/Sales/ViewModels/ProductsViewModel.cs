@@ -33,7 +33,7 @@ namespace Sales.ViewModels{
         public ProductsViewModel()
         {
             this.apiService = new ApiService();
-            this.LoadProducts();
+            this.LoadProducts();    
         }
 
         private async void LoadProducts()
