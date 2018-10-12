@@ -6,6 +6,7 @@ namespace Sales.ViewModels{
     using System.Windows.Input;
     using Common.Models;
     using GalaSoft.MvvmLight.Command;
+    using Sales.Helpers;
     using Sales.Services;
     using Xamarin.Forms;
     
@@ -47,16 +48,18 @@ namespace Sales.ViewModels{
                 if (!IsSuccess.IsSuccess)
                 {
                     this.IsRefreshing = false;
-                    await Application.Current.MainPage.DisplayAlert("Error", IsSuccess.Message, "Accept");
+                    await Application.Current.MainPage.DisplayAlert(Languages.Error, IsSuccess.Message, Languages.Accept);
                     return;
                 }
 
 
                 string url = Application.Current.Resources["UrlApi"].ToString();
-                var reponse = await apiService.GetList<Product>(url, "/api", "/products");
+                string prefix = Application.Current.Resources["UrlPrefix"].ToString();
+                string controller = Application.Current.Resources["UrlProductsController"].ToString();
+                var reponse = await apiService.GetList<Product>(url, prefix, controller);
                 if (!reponse.IsSuccess)
                 {                    
-                    await Application.Current.MainPage.DisplayAlert("Error", reponse.Message, "Accept");                    
+                    await Application.Current.MainPage.DisplayAlert(Languages.Error, reponse.Message, Languages.Accept);                    
                 }
                 else{
                     var list = (List<Product>)reponse.Result;
@@ -68,7 +71,7 @@ namespace Sales.ViewModels{
             catch (Exception ex)
             {
                 this.IsRefreshing = false;
-                await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "Accept");
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, ex.Message, Languages.Accept);
 
             }
             finally

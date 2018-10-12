@@ -1,9 +1,9 @@
 ﻿
 namespace Sales.Helpers
 {
-    using Xamarin.Forms;
     using Interfaces;
     using Resources;
+    using Xamarin.Forms;
 
     public static class Languages
     {

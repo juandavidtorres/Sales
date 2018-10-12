@@ -88,7 +88,7 @@ namespace Sales.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Title.
+        ///   Busca una cadena traducida similar a Products.
         /// </summary>
         public static string Products {
             get {

@@ -9,6 +9,8 @@
             <!--Locator-->
             <infra:InstanceLocator x:Key="Locator"/>
             <x:String x:Key="UrlApi">https://apisalesxamarin.azurewebsites.net/</x:String>
+            <x:String x:Key="UrlPrefix">/api</x:String>
+            <x:String x:Key="UrlProductsController">/products</x:String>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
